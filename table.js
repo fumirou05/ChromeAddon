@@ -1,17 +1,6 @@
 window.onload = () => {
     const columns = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-    const rows = ["1", "2", "3", "4", "5", "6", "7"];
-
-    let tmpElement; 
-    const firstRow = document.createElement("tr");
-    for (let item of columns) {
-        tmpElement = document.createElement("th");
-        tmpElement.innerHTML = item;
-        firstRow.appendChild(tmpElement);
-    }
-    
-    const table = document.getElementById("mtable");
-    table.appendChild(firstRow);
+    const rows = ["", "1", "2", "3", "4", "5", "6", "7"];
 
     let tmpRow;
     let tmpCell;
@@ -21,6 +10,9 @@ window.onload = () => {
             if (!column) {
                 tmpCell = document.createElement("th");
                 tmpCell.innerHTML = row;
+            } else if (!row) {
+                tmpCell = document.createElement("th")
+                tmpCell.innerHTML = column;
             } else {
                 tmpCell = document.createElement("td");
                 tmpInput = document.createElement("input");
