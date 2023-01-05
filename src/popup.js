@@ -1,4 +1,4 @@
-import insertMatCode from "./insertMatCode";
+import insertMatCode from "./lib/insertMatCode";
 
 document.getElementById("btn").addEventListener("click", async () => {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true});
