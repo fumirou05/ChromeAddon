@@ -5,6 +5,12 @@
     "manifest_version": 3,
     "permissions": ["activeTab", "scripting", "storage"],
     "options_page": "html/options.html",
+    "content_scripts": [
+        {
+            "matches": ["https://portal.nap.gsic.titech.ac.jp/GetAccess/Login*"],
+            "js": ["./dist/content.js"]
+        }
+    ],
     "action": {
         "default_popup": "html/popup.html",
         "default_icon": {
